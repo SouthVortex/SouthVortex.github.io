@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <title>Our Cars - Catalog</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="cars.html">OUR CARS</a></li>
+                <li><a href="#">ABOUT</a></li>
+                <li><a href="index.html#contact">CONTACT</a></li>
+                <li><a href="#"><i class="fa-solid fa-bars"></i></a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="catalog-header">
+        <h1>OUR MODELS</h1>
+        <div class="search-box">
+            <input type="text" id="searchInput" placeholder="Marka ara..." onkeyup="searchCar()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+        </div>
+    </div>
+
+    <div class="full-cards-container" id="carList">
+        <div class="card card-1" data-name="subaru">
+            <div class="card-head"><h5>Subaru</h5><p>Japon performans ve sürüş efsanesi.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=subaru" class="btn">Details</a></div>
+        </div>
+        <div class="card card-2" data-name="audi">
+            <div class="card-head"><h5>Audi</h5><p>Alman teknolojisi ve premium konfor.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=audi" class="btn">Details</a></div>
+        </div>
+        <div class="card card-3" data-name="bmw">
+            <div class="card-head"><h5>Bmw</h5><p>Sürüş keyfi ve üstün dinamizm.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=bmw" class="btn">Details</a></div>
+        </div>
+        <div class="card card-4" data-name="mercedes">
+            <div class="card-head"><h5>Mercedes</h5><p>Yıldızın prestiji ve benzersiz asalet.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=mercedes" class="btn">Details</a></div>
+        </div>
+        <div class="card card-5" data-name="ford">
+            <div class="card-head"><h5>Ford</h5><p>Amerikan gücü ve ikonik modeller.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=ford" class="btn">Details</a></div>
+        </div>
+        <div class="card card-6" data-name="toyota">
+            <div class="card-head"><h5>Toyota</h5><p>Yolların en güvenilir ve dayanıklı ismi.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=toyota" class="btn">Details</a></div>
+        </div>
+        <div class="card card-7" data-name="tesla">
+            <div class="card-head"><h5>Tesla</h5><p>Tamamen elektrikli ve otonom gelecek.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=tesla" class="btn">Details</a></div>
+        </div>
+        <div class="card card-8" data-name="renault">
+            <div class="card-head"><h5>Renault</h5><p>Modern şehir içi şıklık ve yakıt tasarrufu.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=renault" class="btn">Details</a></div>
+        </div>
+        <div class="card card-9" data-name="volvo">
+            <div class="card-head"><h5>Volvo</h5><p>Güvenlik standartlarını yeniden yazan İsveç çeliği.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=volvo" class="btn">Details</a></div>
+        </div>
+        <div class="card card-10" data-name="vw">
+            <div class="card-head"><h5>Volkswagen</h5><p>Herkes için kalite ve üstün Alman standartları.</p></div>
+            <div class="card-bottom"><a href="details.html?brand=vw" class="btn">Details</a></div>
+        </div>
+    </div>
+</div>
+
+<script>
+function searchCar() {
+    let input = document.getElementById('searchInput').value.toLowerCase();
+    let cards = document.getElementsByClassName('card');
+    for (let i = 0; i < cards.length; i++) {
+        let name = cards[i].getAttribute('data-name');
+        cards[i].style.display = name.includes(input) ? "inline-block" : "none";
+    }
+}
+</script>
+<div id="chat-section" style="padding: 50px 8%; text-align: center;">
+    <h2 style="color: white; font-size: 30px; margin-bottom: 20px;">LOBBY CHAT</h2>
+    <div style="width: 100%; max-width: 800px; margin: 0 auto; border: 2px solid red; border-radius: 15px; overflow: hidden;">
+        <iframe src="https://minnit.chat/CarsWebsiteChat?embed&nickname=" 
+                style="border:none; width:100%; height:400px;" 
+                allowTransparency="true"></iframe>
+    </div>
+</div>
+</body>
+</html>

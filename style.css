@@ -1,0 +1,302 @@
+@import url('https://fonts.googleapis.com/css2?family=Titillium+Web:wght@400;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Titillium Web", sans-serif;
+}
+
+/* Sayfanın beyazlamaması için min-height ve arka plan rengi eklendi */
+body {
+    background-color: #000;
+}
+
+.container {
+    width: 100%;
+    min-height: 100vh; /* 'height: 100vh' olan yeri 'min-height' yapıyoruz */
+    padding-left: 8%;
+    padding-right: 8%;
+    background-image: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.8)), url(./images/bg.png);
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; /* Sayfa kaysa da arka plan sabit kalır */
+}
+
+p{
+    font-size: 10px;
+    color: #fff;
+    line-height: 16px;
+}
+
+.btn{
+    padding: 10px 24px;
+    font-size: 12px;
+    font-weight: 700;
+    margin-top: 20px;
+    cursor: pointer;
+    color: #000;
+    background-color: #fff;
+    border-radius: 20px;
+    border: 1px solid red;
+    text-decoration: none;
+    transition: ease 0.5s;
+    display: inline-block;
+}
+
+.btn:hover {
+    background-color: #000;
+    color: #fff;    
+    border-color: #fff;
+}
+
+/* NAVBAR */
+.navbar{
+    height: 80px;
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+nav ul{
+    list-style: none;  
+    display: flex;
+    column-gap: 20px; 
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    transition: ease 0.5s;
+    font-weight: 700;
+}
+nav ul li a:hover{
+    color: red; /* Siyah yerine kırmızı daha güzel duracaktır */
+} 
+
+.row {
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    padding-top: 50px;
+    min-height: 88vh;
+}
+
+.col{
+    flex-basis: 50%;
+}
+
+h1{
+    color: #fff;
+    font-size: 80px;
+    line-height: 90px;
+}
+
+.desc{
+    font-size: 16px;
+    margin-top: 20px;
+    max-width: 450px;
+}
+
+/* ARAMA KUTUSU */
+.search-box {
+    margin-bottom: 20px;
+    position: relative;
+    width: 200px;
+    margin-left: 15px;
+}
+
+.search-box input {
+    width: 100%;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid red;
+    padding: 8px 15px;
+    border-radius: 20px;
+    color: #fff;
+    outline: none;
+}
+
+.search-box i {
+    position: absolute;
+    right: 15px;
+    top: 10px;
+    color: #fff;
+}
+
+/* KARTLAR */
+.cards{
+    max-width: 500px;
+}
+
+.card{
+    width: 200px;
+    height: 230px;
+    display: inline-block;
+    background-position: center;
+    background-size: cover;
+    border-radius: 10px;
+    padding: 15px 25px;
+    cursor: pointer;
+    border: 1px solid red;
+    position: relative;
+    margin: 10px 15px;
+    transition: ease 0.5s;
+    vertical-align: top;
+}
+
+.card:hover{
+    transform: translateY(-10px);
+    border-color: #fff;
+}
+
+.card .card-head{
+    background-color: rgba(0,0,0,0.7);
+    color: #fff;
+    border-radius: 6px;
+    padding: 6px;
+}
+
+.card .card-bottom{
+    position: absolute;
+    bottom: 20px;
+}
+
+/* Yeni Araç Resimleri (Buraya kendi resimlerini ekleyebilirsin) */
+.card-1 { background-image: url(./images/pic-1.png); }
+.card-2 { background-image: url(./images/pic-2.png); }
+.card-3 { background-image: url(./images/pic-3.png); }
+.card-4 { background-image: url(./images/pic-4.png); }
+.card-5 { background-image: url('./images/pic-6.jpg'); }
+.card-6 { background-image: url('https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=400'); }
+.card-7 { background-image: url('https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=400'); }
+.card-8 { background-image: url('./images/pic-7.jpg'); }
+
+/* İLETİŞİM FORMU TASARIMI */
+.contact-container {
+    margin-top: 100px;
+    padding-bottom: 50px;
+    text-align: center;
+}
+
+.contact-container h2 {
+    color: #fff;
+    margin: 30px 0;
+    font-size: 40px;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
+    margin: 0 auto;
+    gap: 15px;
+}
+
+.contact-form input, .contact-form textarea {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid red;
+    padding: 15px;
+    border-radius: 5px;
+    color: #fff;
+}
+
+.contact-form textarea { height: 100px; }
+
+.full-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 50px;
+    margin-top: 30px;
+}
+
+.catalog-header {
+    text-align: center;
+    padding-top: 40px;
+}
+
+.catalog-header h1 {
+    font-size: 50px;
+    margin-bottom: 20px;
+}
+
+.catalog-header .search-box {
+    margin: 0 auto;
+    width: 300px;
+}
+
+/* Sayfa geçişlerinde arka planın bozulmaması için */
+.container {
+    min-height: 100vh;
+    background-attachment: fixed;
+}
+
+/* MODEL DETAY SAYFASI TASARIMI */
+.models-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 30px;
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.model-card {
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid red;
+    border-radius: 15px;
+    width: 300px;
+    overflow: hidden;
+    transition: 0.5s;
+}
+
+.model-card:hover {
+    transform: scale(1.05);
+    border-color: #fff;
+}
+
+.model-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.model-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.model-info h4 {
+    color: #fff;
+    font-size: 20px;
+    margin-bottom: 5px;
+}
+
+.model-info span {
+    color: red;
+    font-weight: 700;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.card-volvo { 
+    background-image: url('https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?w=500'); 
+}
+
+.card-vw { 
+    background-image: url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?w=500'); 
+}
+
+.card.card-9 { 
+    background-image: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=400'); /* Volvo */
+}
+.card.card-10 { 
+    background-image: url('https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=400'); /* VW */
+}
+
+.full-cards-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    padding-bottom: 50px;
+    margin-top: 30px;
+}
