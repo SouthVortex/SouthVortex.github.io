@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Model Details</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+</head>
+<body>
+<div class="container">
+    <div class="navbar">
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="cars.html">OUR CARS</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="catalog-header">
+        <h1 id="brandTitle">Loading...</h1>
+    </div>
+
+    <div class="models-container" id="modelList">
+        </div>
+
+    <div style="text-align: center; margin-top: 50px;">
+        <a href="cars.html" class="btn">KATALOĞA DÖN</a>
+    </div>
+</div>
+
+<script>
+const carData = {
+    subaru: [
+        { name: "Impreza", type: "Hatchback", img: "https://images.unsplash.com/photo-1563720223185-11003d516905?q=80&w=600" },
+        { name: "Legacy", type: "Sedan", img: "https://images.unsplash.com/photo-1567808291548-fc3ee04dbac0?q=80&w=600" },
+        { name: "Forester", type: "SUV", img: "https://images.unsplash.com/photo-1562911791-c7a97b729ec5?q=80&w=600" }
+    ],
+    audi: [
+        { name: "A3 Sportback", type: "Hatchback", img: "https://images.unsplash.com/photo-1606152421802-db97b9c7a11b?q=80&w=600" },
+        { name: "A4 Sedan", type: "Sedan", img: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=600" },
+        { name: "Q5", type: "SUV", img: "https://images.unsplash.com/photo-1541348263662-e0c8de4259ba?q=80&w=600" }
+    ],
+    bmw: [
+        { name: "1 Series", type: "Hatchback", img: "https://images.unsplash.com/photo-1556122071-e404be74749?q=80&w=600" },
+        { name: "3 Series", type: "Sedan", img: "https://images.unsplash.com/photo-1523983388277-336a66bf9bcd?q=80&w=600" },
+        { name: "X5", type: "SUV", img: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=600" }
+    ],
+    mercedes: [
+        { name: "A-Class HB", type: "Hatchback", img: "https://images.unsplash.com/photo-1598553634023-e51859c258d4?q=80&w=600" },
+        { name: "C-Class Sedan", type: "Sedan", img: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=600" },
+        { name: "GLE SUV", type: "SUV", img: "https://images.unsplash.com/photo-1511919884226-fd3cad34687c?q=80&w=600" }
+    ],
+    ford: [
+        { name: "Focus HB", type: "Hatchback", img: "https://images.unsplash.com/photo-1552519507-da3b142c6e3d?q=80&w=600" },
+        { name: "Mondeo", type: "Sedan", img: "https://images.unsplash.com/photo-1605810230434-7631ac76ec81?q=80&w=600" },
+        { name: "Kuga", type: "SUV", img: "https://images.unsplash.com/photo-1606611013016-969c19ba27bb?q=80&w=600" }
+    ],
+    toyota: [
+        { name: "Corolla HB", type: "Hatchback", img: "https://images.unsplash.com/photo-1621007947382-bb3c3994e3fb?q=80&w=600" },
+        { name: "Corolla Sedan", type: "Sedan", img: "https://images.unsplash.com/photo-1617469767053-d3b508a0d822?q=80&w=600" },
+        { name: "RAV4", type: "SUV", img: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=600" }
+    ],
+    tesla: [
+        { name: "Model S", type: "Hatchback", img: "https://images.unsplash.com/photo-1536700503339-1e4b06520771?q=80&w=600" },
+        { name: "Model 3", type: "Sedan", img: "https://images.unsplash.com/photo-1560958089-b8a1929cea89?q=80&w=600" },
+        { name: "Model Y", type: "SUV", img: "https://images.unsplash.com/photo-1619330691886-33924151787a?q=80&w=600" }
+    ],
+    renault: [
+        { name: "Clio", type: "Hatchback", img: "https://images.unsplash.com/photo-1553264701-d41935828551?q=80&w=600" },
+        { name: "Megane Sedan", type: "Sedan", img: "https://images.unsplash.com/photo-1601050720573-03067756f777?q=80&w=600" },
+        { name: "Austral", type: "SUV", img: "https://images.unsplash.com/photo-1632245889029-e406fbddad65?q=80&w=600" }
+    ],
+    volvo: [
+        { name: "EX30", type: "Hatchback", img: "https://images.unsplash.com/photo-1502161739789-91398059882a?q=80&w=600" },
+        { name: "S90", type: "Sedan", img: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=600" },
+        { name: "XC90", type: "SUV", img: "https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?q=80&w=600" }
+    ],
+    vw: [
+        { name: "Golf", type: "Hatchback", img: "https://images.unsplash.com/photo-1541899481282-d53bffe3c35d?q=80&w=600" },
+        { name: "Passat", type: "Sedan", img: "https://images.unsplash.com/photo-1582639510494-c80b5de9f148?q=80&w=600" },
+        { name: "Tiguan", type: "SUV", img: "https://images.unsplash.com/photo-1609521262049-b49e8d6489a8?q=80&w=600" }
+    ]
+};
+
+window.onload = function() {
+    const params = new URLSearchParams(window.location.search);
+    const brand = params.get('brand');
+    const title = document.getElementById('brandTitle');
+    const list = document.getElementById('modelList');
+
+    if (brand && carData[brand]) {
+        title.innerText = brand.toUpperCase() + " MODELLERİ";
+        list.innerHTML = ""; // İçeriği temizle
+        carData[brand].forEach(car => {
+            list.innerHTML += `
+                <div class="model-card">
+                    <img src="${car.img}" alt="${car.name}">
+                    <div class="model-info">
+                        <h4>${car.name}</h4>
+                        <span>${car.type}</span>
+                    </div>
+                </div>
+            `;
+        });
+    } else {
+        title.innerText = "Model Bulunamadı";
+        list.innerHTML = "<p style='color:white'>Lütfen katalogdan geçerli bir marka seçin.</p>";
+    }
+};
+</script>
+
+<div id="chat-section" style="padding: 50px 8%; text-align: center;">
+    <h2 style="color: white; font-size: 30px; margin-bottom: 20px;">LOBBY CHAT</h2>
+    <div style="width: 100%; max-width: 800px; margin: 0 auto; border: 2px solid red; border-radius: 15px; overflow: hidden;">
+        <iframe src="https://minnit.chat/CarsWebsiteChat?embed&nickname=" 
+                style="border:none; width:100%; height:400px;" 
+                allowTransparency="true"></iframe>
+    </div>
+</div>
+</body>
+</html>
