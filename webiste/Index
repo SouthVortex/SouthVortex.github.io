@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css" />
+    <title>Cars Website</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="container">
+    <div class="navbar">
+        <a href="index.html"><img src="./images/logo.png" alt="logo"></a>
+        <nav>
+            <ul>
+                <li><a href="index.html">HOME</a></li>
+                <li><a href="cars.html">OUR CARS</a></li>
+                <li><a href="#contact">CONTACT</a></li>
+                <li><a href="#chat-section">CHAT</a></li>
+            </ul>
+        </nav>
+    </div>
+
+    <div class="row">
+        <div class="col">
+            <h1>CARS<hr>WEBSİTE</h1>
+            <p class="desc">Her markanın en yeni modellerini keşfedin. Audi’nin zarafeti, BMW’nin dinamizmi ve Mercedes-Benz’in prestiji burada bir arada.</p>
+            <a href="cars.html" class="btn">ALL CARS</a>
+        </div>
+        <div class="col">
+            <div class="cards">
+                <div class="card card-1">
+                    <div class="card-head"><h5>Subaru</h5><p>Japon performans ve sürüş efsanesi.</p></div>
+                    <div class="card-bottom"><a href="details.html?brand=subaru" class="btn">Details</a></div>
+                </div>
+                <div class="card card-2">
+                    <div class="card-head"><h5>Audi</h5><p>Alman teknolojisi ve premium konfor.</p></div>
+                    <div class="card-bottom"><a href="details.html?brand=audi" class="btn">Details</a></div>
+                </div>
+                <div class="card card-3">
+                    <div class="card-head"><h5>Bmw</h5><p>Münih'ten dünyaya yayılan sürüş keyfi.</p></div>
+                    <div class="card-bottom"><a href="details.html?brand=bmw" class="btn">Details</a></div>
+                </div>
+                <div class="card card-4">
+                    <div class="card-head"><h5>Mercedes</h5><p>Yıldızın prestiji ve asalet.</p></div>
+                    <div class="card-bottom"><a href="details.html?brand=mercedes" class="btn">Details</a></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="chat-section" style="padding-top: 100px; text-align: center;">
+        <h2 style="color: #fff; margin-bottom: 20px;">LOBBY CHAT</h2>
+        <div style="max-width: 800px; margin: 0 auto; border: 1px solid red; border-radius: 10px; padding: 10px; background: rgba(0,0,0,0.5);">
+            <script src="https://minnit.chat/js/embed.js?c=1772345192" defer></script>
+            <span style="display: none;" class="minnit-chat-sembed" data-chatname="https://organizations.minnit.chat/280820779569284/c/Main?embed" data-style="width:90%; height:500px; max-height:90vh;" data-version="1.55">Chat</span><p class="powered-by-minnit"><a href="https://minnit.chat" target="_blank">Embed a chatroom on your website for free with Minnit Chat</a></p>
+            </div>
+    </div>
+
+    <div id="contact" style="padding: 100px 0; text-align: center;">
+        <h2 style="color: #fff; margin-bottom: 20px;">CONTACT US</h2>
+        <form action="https://formspree.io/f/maqvokgb" method="POST" style="max-width: 400px; margin: 0 auto; display: flex; flex-direction: column; gap: 15px;">
+            <input type="text" name="name" placeholder="Adınız" required style="padding: 12px; border-radius: 20px; border: 1px solid red; background: rgba(0,0,0,0.5); color: #fff;">
+            <input type="email" name="email" placeholder="Email" required style="padding: 12px; border-radius: 20px; border: 1px solid red; background: rgba(0,0,0,0.5); color: #fff;">
+            <textarea name="message" placeholder="Mesajınız" required style="padding: 12px; border-radius: 20px; border: 1px solid red; background: rgba(0,0,0,0.5); color: #fff; height: 100px;"></textarea>
+            <button type="submit" class="btn">SEND MESSAGE</button>
+        </form>
+    </div>
+</div>
+</body>
+</html>
